@@ -1,0 +1,8 @@
+﻿{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://sky-shield-safety-operation.onrender.com/api/:path*"
+    }
+  ]
+}
