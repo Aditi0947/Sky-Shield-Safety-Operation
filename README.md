@@ -66,7 +66,7 @@ python -m app.seed --reset                           # loads data + indexes poli
 uvicorn app.main:app --reload
 ```
 
-Interactive API docs: http://localhost:8000/docs
+Interactive API docs: https://sky-shield-safety-operation.onrender.com/docs
 
 ```bash
 # 3. frontend (needs Node.js 18+), in a second terminal
@@ -75,7 +75,7 @@ npm install
 npm run dev                                          # http://localhost:5173
 ```
 
-The frontend forwards `/api` to the backend on port 8000, so both must be running. The login page has buttons that fill in the demo accounts.
+The frontend forwards `/api` to the hosted API by default. To use the local backend instead, set `VITE_API_TARGET=http://localhost:8000` before starting Vite. Production builds use the hosted API unless `VITE_API_URL` is set. The login page has buttons that fill in the demo accounts.
 
 ### Screens by role
 

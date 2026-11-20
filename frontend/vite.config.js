@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // /api is forwarded to the FastAPI server, so the browser never needs CORS.
-const API_TARGET = process.env.VITE_API_TARGET || 'http://localhost:8000'
+const API_TARGET = process.env.VITE_API_TARGET || 'https://sky-shield-safety-operation.onrender.com'
 
 export default defineConfig({
   plugins: [react()],
