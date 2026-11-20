@@ -40,7 +40,7 @@ function parseError(status, body) {
 }
 
 export async function api(path, { method = 'GET', body, query } = {}) {
-  let url = `/api${path}`
+  let url = `${import.meta.env.VITE_API_URL || ''}/api${path}`
   if (query) {
     const params = new URLSearchParams()
     Object.entries(query).forEach(([k, v]) => {
