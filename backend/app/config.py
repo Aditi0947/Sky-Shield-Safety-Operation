@@ -16,7 +16,10 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     jwt_expire_minutes: int = 480
 
-    cors_origins: str = "http://localhost:5173"
+    cors_origins: str = (
+        "http://localhost:5173,"
+        "https://sky-shield-safety-operation-dqhh-h2i6u3evn-adiii10.vercel.app"
+    )
 
     # AI: llm_provider = mock | anthropic | openai ; embedding_provider = hash | openai
     llm_provider: str = "mock"

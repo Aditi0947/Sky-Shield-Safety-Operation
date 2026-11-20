@@ -77,6 +77,8 @@ npm run dev                                          # http://localhost:5173
 
 The frontend forwards `/api` to the hosted API by default. To use the local backend instead, set `VITE_API_TARGET=http://localhost:8000` before starting Vite. Production builds use the hosted API unless `VITE_API_URL` is set. The login page has buttons that fill in the demo accounts.
 
+For a separate frontend deployment, include its exact origin in the backend's `CORS_ORIGINS` setting (comma-separated, without a trailing slash) and redeploy the backend.
+
 ### Screens by role
 
 - **Reporter:** report form (with validation), "My reports", and each report's status and history. Reporters do not see measures or AI output.
