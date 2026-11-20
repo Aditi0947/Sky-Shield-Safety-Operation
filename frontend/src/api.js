@@ -1,7 +1,5 @@
 // Thin fetch wrapper around the SkyShield API.
 const TOKEN_KEY = 'skyshield_token'
-const API_BASE_URL = (import.meta.env.VITE_API_URL
-  || (import.meta.env.DEV ? '' : 'https://sky-shield-safety-operation.onrender.com')).replace(/\/+$/, '')
 
 export const tokenStore = {
   get: () => {
@@ -42,7 +40,7 @@ function parseError(status, body) {
 }
 
 export async function api(path, { method = 'GET', body, query } = {}) {
-  let url = `${API_BASE_URL}/api${path}`
+  let url = `/api${path}`
   if (query) {
     const params = new URLSearchParams()
     Object.entries(query).forEach(([k, v]) => {

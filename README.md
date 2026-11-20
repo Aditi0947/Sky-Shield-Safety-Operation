@@ -75,9 +75,7 @@ npm install
 npm run dev                                          # http://localhost:5173
 ```
 
-The frontend forwards `/api` to the hosted API by default. To use the local backend instead, set `VITE_API_TARGET=http://localhost:8000` before starting Vite. Production builds use the hosted API unless `VITE_API_URL` is set. The login page has buttons that fill in the demo accounts.
-
-For a separate frontend deployment, include its exact origin in the backend's `CORS_ORIGINS` setting (comma-separated, without a trailing slash) and redeploy the backend.
+The frontend uses same-origin `/api` requests. Vite proxies them to the hosted API by default, while `frontend/vercel.json` rewrites them to the hosted API on Vercel, avoiding browser CORS. To use the local backend in Vite, set `VITE_API_TARGET=http://localhost:8000` before starting it. The login page has buttons that fill in the demo accounts.
 
 ### Screens by role
 
